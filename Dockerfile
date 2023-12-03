@@ -1,0 +1,1 @@
+FROM wolveix/satisfactory-server:latest
