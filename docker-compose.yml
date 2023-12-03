@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  server:
+    container_name: 'server'
+    hostname: 'server'
+    image: 'wolveix/satisfactory-server:latest'
+    ports:
+      - '7777:7777/udp'
+      - '15000:15000/udp'
+      - '15777:15777/udp'
+    volumes:
+      - './config:/config'
+    environment:
+      - MAXPLAYERS=2
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 16GB
+        reservations:
+          memory: 12GB
